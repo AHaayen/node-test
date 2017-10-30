@@ -2,16 +2,22 @@ const expect = require('expect');
 
 const utils = require('./utils');
 
+describe('Utils', () => {
+    
+    describe('#add', () => {
+        // it = is provided by Mocha. 
+        it('should add two numbers', () => {
+            var res = utils.add(33,11);
 
-// it = is provided by Mocha. 
-it('should add two numbers', () => {
-    var res = utils.add(33,11);
+        expect(res).toBe(44).toBeA('number');
+        // if(res !== 44){
+        //     throw new Error(`Expected 44, but got ${res}.`);    
+        // }
+        });
+    });
 
-    expect(res).toBe(44).toBeA('number');
-    // if(res !== 44){
-    //     throw new Error(`Expected 44, but got ${res}.`);    
-    // }
-});
+
+
 
 
 it('should async add two numbers', (done) => {
@@ -44,6 +50,10 @@ it('should async square a number', (done) => {
         done();
     });
 });
+});
+
+
+
 
 
 // should verify first and last names are set
